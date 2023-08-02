@@ -1,8 +1,7 @@
-import React from "react";
 import { useRouter } from "next/router";
 import MainLayout from "~/components/MainLayout";
 import componentMap from "~/components/basics/ComponentMap";
-import { BasicPage, basicPageList } from "~/types/page";
+import { basicPageList, type BasicPage } from "~/types/page";
 
 const BasicExamplesPage = () => {
   const router = useRouter();

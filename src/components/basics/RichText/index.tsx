@@ -1,12 +1,12 @@
-import React, { useState } from "react";
-import { EditorThemeClasses } from "lexical";
+import { type EditorThemeClasses } from "lexical";
+import { useState } from "react";
 
 import { LexicalComposer } from "@lexical/react/LexicalComposer";
-import { RichTextPlugin } from "@lexical/react/LexicalRichTextPlugin";
 import { ContentEditable } from "@lexical/react/LexicalContentEditable";
+import LexicalErrorBoundary from "@lexical/react/LexicalErrorBoundary";
 import { HistoryPlugin } from "@lexical/react/LexicalHistoryPlugin";
 import { OnChangePlugin } from "@lexical/react/LexicalOnChangePlugin";
-import LexicalErrorBoundary from "@lexical/react/LexicalErrorBoundary";
+import { RichTextPlugin } from "@lexical/react/LexicalRichTextPlugin";
 
 const theme: EditorThemeClasses = {
   ltr: "ltr",
@@ -25,13 +25,15 @@ const RichText = () => {
 
   return (
     <LexicalComposer initialConfig={initialConfig}>
-      <div className="editor-wrapper relative p-4">
+      <div className="editor-wrapper relative">
         <RichTextPlugin
           contentEditable={
-            <ContentEditable className="content-editable h-20 rounded-md border p-2" />
+            <ContentEditable className="content-editable min-h-20 rounded-md border p-2" />
           }
           placeholder={
-            <div className="absolute left-6 top-6">Enter some text...</div>
+            <div className="pointer-events-none absolute left-2 top-2  text-gray-500">
+              Enter some text...
+            </div>
           }
           ErrorBoundary={LexicalErrorBoundary}
         />
@@ -42,8 +44,10 @@ const RichText = () => {
         }
       />
       <HistoryPlugin />
-      <hr />
-      <pre>{jsonedState}</pre>
+      <p className="my-2 text-sm font-semibold">
+        Stringified JSON Editor State Output
+      </p>
+      <pre className="text-xs">{jsonedState}</pre>
     </LexicalComposer>
   );
 };

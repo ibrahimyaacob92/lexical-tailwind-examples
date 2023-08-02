@@ -1,12 +1,11 @@
-import React, { useState } from "react";
-import { EditorThemeClasses } from "lexical";
+import { type EditorThemeClasses } from "lexical";
 
 import { LexicalComposer } from "@lexical/react/LexicalComposer";
-import { RichTextPlugin } from "@lexical/react/LexicalRichTextPlugin";
 import { ContentEditable } from "@lexical/react/LexicalContentEditable";
+import LexicalErrorBoundary from "@lexical/react/LexicalErrorBoundary";
 import { HistoryPlugin } from "@lexical/react/LexicalHistoryPlugin";
 import { OnChangePlugin } from "@lexical/react/LexicalOnChangePlugin";
-import LexicalErrorBoundary from "@lexical/react/LexicalErrorBoundary";
+import { RichTextPlugin } from "@lexical/react/LexicalRichTextPlugin";
 import TreeViewPlugin from "./TreeViewPlugin";
 
 const theme: EditorThemeClasses = {
@@ -16,8 +15,8 @@ const theme: EditorThemeClasses = {
   span: "bg-gray-200",
 };
 
+// Replacing the editor state with this
 const RichTextWithTreeViewPlugin = () => {
-  const [jsonedState, setJsonState] = useState("");
   const initialConfig = {
     namespace: "MyEditor",
     theme,
@@ -26,19 +25,19 @@ const RichTextWithTreeViewPlugin = () => {
 
   return (
     <LexicalComposer initialConfig={initialConfig}>
-      <div className="editor-wrapper relative p-4">
+      <div className="editor-wrapper relative">
         <RichTextPlugin
           contentEditable={
             <ContentEditable className="content-editable min-h-20 rounded-md border p-2" />
           }
           placeholder={
-            <div className="absolute left-6 top-6">Enter some text...</div>
+            <div className="absolute left-2 top-2">Enter some text...</div>
           }
           ErrorBoundary={LexicalErrorBoundary}
         />
       </div>
       {/*  UI Plugin */}
-      <div className="relative p-4">
+      <div className="relative py-4">
         <TreeViewPlugin showRaw />
       </div>
 

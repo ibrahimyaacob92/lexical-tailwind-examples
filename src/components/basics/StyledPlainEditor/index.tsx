@@ -1,12 +1,12 @@
-import React, { useState } from "react";
-import { EditorThemeClasses } from "lexical";
+import { type EditorThemeClasses } from "lexical";
+import { useState } from "react";
 
 import { LexicalComposer } from "@lexical/react/LexicalComposer";
-import { PlainTextPlugin } from "@lexical/react/LexicalPlainTextPlugin";
 import { ContentEditable } from "@lexical/react/LexicalContentEditable";
+import LexicalErrorBoundary from "@lexical/react/LexicalErrorBoundary";
 import { HistoryPlugin } from "@lexical/react/LexicalHistoryPlugin";
 import { OnChangePlugin } from "@lexical/react/LexicalOnChangePlugin";
-import LexicalErrorBoundary from "@lexical/react/LexicalErrorBoundary";
+import { PlainTextPlugin } from "@lexical/react/LexicalPlainTextPlugin";
 
 const theme: EditorThemeClasses = {
   ltr: "ltr",
@@ -15,7 +15,7 @@ const theme: EditorThemeClasses = {
   span: "bg-gray-200",
 };
 
-const StyledPlain = () => {
+const StyledPlainEditor = () => {
   const [jsonedState, setJsonState] = useState("");
   const initialConfig = {
     namespace: "MyEditor",
@@ -25,13 +25,15 @@ const StyledPlain = () => {
 
   return (
     <LexicalComposer initialConfig={initialConfig}>
-      <div className="editor-wrapper relative p-4">
+      <div className="editor-wrapper relative">
         <PlainTextPlugin
           contentEditable={
-            <ContentEditable className="content-editable h-20 rounded-md border p-2" />
+            <ContentEditable className="content-editable min-h-20 rounded-md border p-2" />
           }
           placeholder={
-            <div className="absolute left-6 top-6">Enter some text...</div>
+            <div className="pointer-events-none absolute left-2 top-2 text-gray-500">
+              Enter some text...
+            </div>
           }
           ErrorBoundary={LexicalErrorBoundary}
         />
@@ -42,10 +44,12 @@ const StyledPlain = () => {
         }
       />
       <HistoryPlugin />
-      <hr />
-      <pre>{jsonedState}</pre>
+      <p className="my-2 text-sm font-semibold">
+        Stringified JSON Editor State Output
+      </p>
+      <pre className="text-xs">{jsonedState}</pre>
     </LexicalComposer>
   );
 };
 
-export default StyledPlain;
+export default StyledPlainEditor;

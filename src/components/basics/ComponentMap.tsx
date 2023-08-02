@@ -1,9 +1,8 @@
-import React from "react";
 import { BasicPage } from "~/types/page";
 import PlainStupid from "./PlainStupid";
-import StyledPlain from "./PlainText";
 import Doc from "./PlainStupid/Doc";
 import RichText from "./RichText";
+import StyledPlain from "./StyledPlainEditor";
 import RichTextWithTreeViewPlugin from "./WithTreeViewPlugin";
 
 const componentMap = {

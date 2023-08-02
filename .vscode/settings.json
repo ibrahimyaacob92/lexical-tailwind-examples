@@ -1,0 +1,21 @@
+{
+	"editor.formatOnPaste": true,
+	"editor.formatOnSave": true,
+	"editor.wordWrap": "off",
+	"editor.codeActionsOnSave": {
+		"source.fixAll.eslint": true,
+		"source.fixAll.format": true,
+		"source.organizeImports": true
+	},
+	"cSpell.words": [
+		"Bootcamp",
+		"Mantine",
+		"TRPC",
+		"Uploadthing",
+		"upsert"
+	],
+	"cSpell.enableFiletypes": [
+		"prisma"
+	],
+	"svg.preview.background": "white"
+}
