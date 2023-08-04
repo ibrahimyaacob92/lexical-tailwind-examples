@@ -1,23 +1,22 @@
-import React, { useState } from "react";
-import { EditorThemeClasses } from "lexical";
+import { type EditorThemeClasses } from "lexical";
 
 import { LexicalComposer } from "@lexical/react/LexicalComposer";
-import { RichTextPlugin } from "@lexical/react/LexicalRichTextPlugin";
 import { ContentEditable } from "@lexical/react/LexicalContentEditable";
+import LexicalErrorBoundary from "@lexical/react/LexicalErrorBoundary";
 import { HistoryPlugin } from "@lexical/react/LexicalHistoryPlugin";
 import { OnChangePlugin } from "@lexical/react/LexicalOnChangePlugin";
-import LexicalErrorBoundary from "@lexical/react/LexicalErrorBoundary";
-import TreeViewPlugin from "./TreeViewPlugin";
+import { RichTextPlugin } from "@lexical/react/LexicalRichTextPlugin";
+import TreeViewPlugin from "../WithTreeViewPlugin/TreeViewPlugin";
+import TextFormatToolbarPlugin from "./TextFormatToolbarPlugin";
 
 const theme: EditorThemeClasses = {
   ltr: "ltr",
   rtl: "rtl",
-  paragraph: "text-red-700",
+  paragraph: "text-black",
   span: "bg-gray-200",
 };
 
-const RichTextWithTreeViewPlugin = () => {
-  const [jsonedState, setJsonState] = useState("");
+const Editor = () => {
   const initialConfig = {
     namespace: "MyEditor",
     theme,
@@ -26,21 +25,19 @@ const RichTextWithTreeViewPlugin = () => {
 
   return (
     <LexicalComposer initialConfig={initialConfig}>
-      <div className="editor-wrapper relative p-4">
+      <TextFormatToolbarPlugin className="mb-2" />
+      <div className="editor-wrapper relative">
         <RichTextPlugin
           contentEditable={
-            <ContentEditable className="content-editable min-h-20 rounded-md border p-2" />
+            <ContentEditable className="content-editable min-h-20 rounded-md border p-2 " />
           }
           placeholder={
-            <div className="absolute left-6 top-6">Enter some text...</div>
+            <div className="absolute left-2 top-2">Enter some text...</div>
           }
           ErrorBoundary={LexicalErrorBoundary}
         />
       </div>
       {/*  UI Plugin */}
-      <div className="relative p-4">
-        <TreeViewPlugin showRaw />
-      </div>
 
       {/* Functional Plugin */}
       <OnChangePlugin
@@ -52,9 +49,12 @@ const RichTextWithTreeViewPlugin = () => {
         }}
       />
       <HistoryPlugin />
-      <hr />
+      <br />
+
+      {/* Debug Plugin */}
+      <TreeViewPlugin />
     </LexicalComposer>
   );
 };
 
-export default RichTextWithTreeViewPlugin;
+export default Editor;

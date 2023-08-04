@@ -3,13 +3,15 @@ export enum BasicPage {
   STYLED_PLAIN = "styled-plain-editor",
   RICH_TEXT = "basic-rich-text",
   TREE_VIEW = "treeview-plugin",
-  // TODO
   TEXT_FORMAT_TOOLBAR = "text-format-toolbar",
-  LOAD_STATE = "load-state",
-  ALIGNMENT = "align",
+  ALIGNMENT = "align-format-toolbar",
+  // TODO
+  SAVE_LOAD = "save-load-state",
   FONT_SIZE = "font-size",
-  HIGHLIGHT = "highlight-text-color",
+  MULTIPLE_FONT = "multiple-fonts",
   TAB_INDENT = "tab-indent",
+  HIGHLIGHT = "highlight-text-color",
+  DIVIDER = "divider-node",
   GET_SELECTION = "get-selection",
   MARK_SELECTION = "mark-selection",
   HASHTAG = "hashtag",
@@ -18,6 +20,7 @@ export enum BasicPage {
 }
 
 export enum IntermediatePage {
+  ADD_TEXT_PROGRAMMATICALLY = "add-text-programmatically",
   MARKDOWN = "markdown",
   BASIC_IMAGE = "basic-image",
   BASIC_TABLE = "basic-table",

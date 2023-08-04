@@ -12,7 +12,7 @@ export default function TreeViewPlugin({ showRaw }: Props) {
       <p className="text-sm font-semibold">Treeview with styling</p>
 
       <TreeView
-        viewClassName="bg-gray-800 text-white text-sm p-2"
+        viewClassName="bg-gray-800 text-white text-sm p-2 max-h-[400px] overflow-x-scroll"
         timeTravelPanelClassName=""
         timeTravelPanelSliderClassName=""
         timeTravelPanelButtonClassName="bg-white text-black p-1 rounded"

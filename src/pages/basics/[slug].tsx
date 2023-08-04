@@ -11,11 +11,28 @@ const BasicExamplesPage = () => {
     return <p>Page not found</p>;
   }
 
-  const { doc, preview } = componentMap[slug];
+  const doc = componentMap[slug]?.doc;
+  const preview = componentMap[slug]?.preview;
 
   return (
     <MainLayout>
-      {doc}
+      {!doc || !preview ? (
+        <div>
+          <p>{"Oh no! Page does not yet exist :("}</p>
+          <p>
+            Feel free to contribute to the
+            <a
+              className="font-semibold text-purple-700"
+              href="https://github.com/ibrahimyaacob92/lexical-tailwind-examples"
+              target="_blank"
+            >
+              {" repo"}
+            </a>
+          </p>
+        </div>
+      ) : (
+        doc
+      )}
       {preview}
     </MainLayout>
   );
