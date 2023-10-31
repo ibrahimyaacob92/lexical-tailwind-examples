@@ -36,7 +36,7 @@ const Sidebar = () => {
       <div>
         <p className="font-bold">Intermediate</p>
         {intermediatePageList.map((page) => (
-          <Link key={`basics-${page}`} href={`/basics/${page}`}>
+          <Link key={`intermediate-${page}`} href={`/intermediate/${page}`}>
             <p className=" whitespace-nowrap"> {page}</p>
           </Link>
         ))}
@@ -44,7 +44,7 @@ const Sidebar = () => {
       <div>
         <p className="font-bold">Advanced</p>
         {advancedPageList.map((page) => (
-          <Link key={`basics-${page}`} href={`/basics/${page}`}>
+          <Link key={`advanced-${page}`} href={`/advanced/${page}`}>
             <p className=" whitespace-nowrap"> {page}</p>
           </Link>
         ))}

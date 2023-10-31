@@ -1,11 +1,10 @@
-import { type EditorThemeClasses } from "lexical";
-
 import { LexicalComposer } from "@lexical/react/LexicalComposer";
 import { ContentEditable } from "@lexical/react/LexicalContentEditable";
 import LexicalErrorBoundary from "@lexical/react/LexicalErrorBoundary";
 import { HistoryPlugin } from "@lexical/react/LexicalHistoryPlugin";
 import { OnChangePlugin } from "@lexical/react/LexicalOnChangePlugin";
 import { RichTextPlugin } from "@lexical/react/LexicalRichTextPlugin";
+import { type EditorThemeClasses } from "lexical";
 import DefaultContentPlugin from "../WithDefaultContent/DefaultContentPlugin";
 import TreeViewPlugin from "../WithTreeViewPlugin/TreeViewPlugin";
 import AlignFormatToolbarPlugin from "./AlignFormatToolbarPlugin";
@@ -30,7 +29,7 @@ const Editor = () => {
       <div className="editor-wrapper relative">
         <RichTextPlugin
           contentEditable={
-            <ContentEditable className="content-editable min-h-[200px] rounded-md border p-2 " />
+            <ContentEditable className="content-editable min-h-[100px] rounded-md border p-2 " />
           }
           placeholder={
             <div className="absolute left-2 top-2">Enter some text...</div>

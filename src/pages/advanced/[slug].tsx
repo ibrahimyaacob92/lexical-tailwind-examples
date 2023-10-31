@@ -1,18 +1,18 @@
 import { useRouter } from "next/router";
 import MainLayout from "~/components/MainLayout";
-import componentMap from "~/components/basics/ComponentMap";
-import { basicPageList, type BasicPage } from "~/types/page";
+import NoDocYet from "~/components/NoDocYet";
+import { advancedPageList, type AdvancedPage } from "~/types/page";
 
-const BasicExamplesPage = () => {
+const AdvancedExamplesPage = () => {
   const router = useRouter();
-  const slug = router.query.slug as BasicPage;
+  const slug = router.query.slug as AdvancedPage;
 
-  if (!basicPageList.includes(slug)) {
+  if (!advancedPageList.includes(slug)) {
     return <p>Page not found</p>;
   }
 
-  const doc = componentMap[slug]?.doc;
-  const preview = componentMap[slug]?.preview;
+  const doc = <NoDocYet />
+  const preview = undefined //componentMap[slug]?.preview;
 
   return (
     <MainLayout>
@@ -38,4 +38,4 @@ const BasicExamplesPage = () => {
   );
 };
 
-export default BasicExamplesPage;
+export default AdvancedExamplesPage;

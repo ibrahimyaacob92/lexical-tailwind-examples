@@ -45,6 +45,46 @@ const componentMap: Record<BasicPage, { doc: ReactNode; preview: ReactNode }> =
     doc: <NoDocYet />,
     preview: <WithDefaultContent />,
   },
+  [BasicPage.FONT_SIZE]: {
+    doc: undefined,
+    preview: undefined
+  },
+  [BasicPage.MULTIPLE_FONT]: {
+    doc: undefined,
+    preview: undefined
+  },
+  [BasicPage.TAB_INDENT]: {
+    doc: undefined,
+    preview: undefined
+  },
+  [BasicPage.HIGHLIGHT]: {
+    doc: undefined,
+    preview: undefined
+  },
+  [BasicPage.DIVIDER]: {
+    doc: undefined,
+    preview: undefined
+  },
+  [BasicPage.GET_SELECTION]: {
+    doc: undefined,
+    preview: undefined
+  },
+  [BasicPage.MARK_SELECTION]: {
+    doc: undefined,
+    preview: undefined
+  },
+  [BasicPage.HASHTAG]: {
+    doc: undefined,
+    preview: undefined
+  },
+  [BasicPage.LIST]: {
+    doc: undefined,
+    preview: undefined
+  },
+  [BasicPage.LINK]: {
+    doc: undefined,
+    preview: undefined
+  }
 };
 
 export default componentMap;
