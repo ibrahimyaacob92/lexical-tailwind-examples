@@ -32,11 +32,10 @@ export default function AlignFormatToolbarPlugin({ className }: Props) {
         }
       })
     })
-
   }, [editor])
-  console.log({ elementFormat })
+
   return (
-    <div className={clsx("flex gap-1")}>
+    <div className={clsx("flex gap-1", className)}>
       <button
         className={clsx("rounded border p-2", elementFormat === 'left' && 'bg-green-200')}
         onClick={() => handleTextFormat("left")}

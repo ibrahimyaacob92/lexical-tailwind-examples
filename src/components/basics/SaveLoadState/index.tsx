@@ -29,7 +29,7 @@ const Editor = () => {
       <div className="editor-wrapper relative">
         <RichTextPlugin
           contentEditable={
-            <ContentEditable className="content-editable min-h-20 rounded-md border p-2 " />
+            <ContentEditable className="content-editable min-h-[100px] rounded-md border p-2 " />
           }
           placeholder={
             <div className="absolute left-2 top-2">Enter some text...</div>
@@ -38,7 +38,7 @@ const Editor = () => {
         />
       </div>
       {/*  UI Plugin */}
-      <div className="flex gap-2">
+      <div className="flex gap-2 mt-2 justify-end">
         <SavePlugin
           onSaveCallback={(editor) =>
             editor.dispatchCommand(CLEAR_EDITOR_COMMAND, undefined)

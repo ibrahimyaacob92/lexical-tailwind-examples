@@ -30,7 +30,7 @@ const Editor = () => {
       <div className="editor-wrapper relative">
         <RichTextPlugin
           contentEditable={
-            <ContentEditable className="content-editable min-h-20 rounded-md border p-2 " />
+            <ContentEditable className="content-editable min-h-[200px] rounded-md border p-2 " />
           }
           placeholder={
             <div className="absolute left-2 top-2">Enter some text...</div>
