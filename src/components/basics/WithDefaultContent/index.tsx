@@ -1,22 +1,25 @@
-import React, { useState } from "react";
-import { EditorThemeClasses } from "lexical";
-
 import { LexicalComposer } from "@lexical/react/LexicalComposer";
-import { RichTextPlugin } from "@lexical/react/LexicalRichTextPlugin";
 import { ContentEditable } from "@lexical/react/LexicalContentEditable";
+import LexicalErrorBoundary from "@lexical/react/LexicalErrorBoundary";
 import { HistoryPlugin } from "@lexical/react/LexicalHistoryPlugin";
 import { OnChangePlugin } from "@lexical/react/LexicalOnChangePlugin";
-import LexicalErrorBoundary from "@lexical/react/LexicalErrorBoundary";
-import TreeViewPlugin from "../../basics/WithTreeViewPlugin/TreeViewPlugin";
+import { RichTextPlugin } from "@lexical/react/LexicalRichTextPlugin";
+import { type EditorThemeClasses } from "lexical";
+import TreeViewPlugin from "../WithTreeViewPlugin/TreeViewPlugin";
+import DefaultContentPlugin from "./DefaultContentPlugin";
 
 const theme: EditorThemeClasses = {
   ltr: "ltr",
   rtl: "rtl",
-  paragraph: "text-red-700",
-  span: "bg-gray-200",
+  paragraph: "text-black",
+  text: {
+    bold: 'font-extrabold',
+    underline: 'underline',
+    strikethrough: 'line-through'
+  }
 };
-
-const TextFormatToolbar = () => {
+// Replacing the editor state with this
+const WithDefaultContent = () => {
   const initialConfig = {
     namespace: "MyEditor",
     theme,
@@ -25,29 +28,28 @@ const TextFormatToolbar = () => {
 
   return (
     <LexicalComposer initialConfig={initialConfig}>
-      <div className="editor-wrapper relative p-4">
+      <div className="editor-wrapper relative">
         <RichTextPlugin
+
           contentEditable={
-            <ContentEditable className="content-editable min-h-20 rounded-md border p-2" />
+            <ContentEditable className="content-editable rounded-md border p-2 min-h-20" />
           }
           placeholder={
-            <div className="absolute left-6 top-6">Enter some text...</div>
+            <div className="absolute left-2 top-2 opacity-50">Enter some text...</div>
           }
           ErrorBoundary={LexicalErrorBoundary}
         />
       </div>
       {/*  UI Plugin */}
-      <div className="relative p-4">
+      <div className="relative py-4">
         <TreeViewPlugin />
       </div>
 
       {/* Functional Plugin */}
+      <DefaultContentPlugin defaultText={["hello world"]} />
       <OnChangePlugin
         onChange={(editorState) => {
-          console.log(
-            "do anything with the editor state here",
-            editorState.toJSON()
-          );
+          // Do something here
         }}
       />
       <HistoryPlugin />
@@ -56,4 +58,4 @@ const TextFormatToolbar = () => {
   );
 };
 
-export default TextFormatToolbar;
+export default WithDefaultContent;

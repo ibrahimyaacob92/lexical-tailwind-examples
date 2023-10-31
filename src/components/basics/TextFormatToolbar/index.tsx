@@ -6,17 +6,25 @@ import LexicalErrorBoundary from "@lexical/react/LexicalErrorBoundary";
 import { HistoryPlugin } from "@lexical/react/LexicalHistoryPlugin";
 import { OnChangePlugin } from "@lexical/react/LexicalOnChangePlugin";
 import { RichTextPlugin } from "@lexical/react/LexicalRichTextPlugin";
+import DefaultContentPlugin from "../WithDefaultContent/DefaultContentPlugin";
 import TreeViewPlugin from "../WithTreeViewPlugin/TreeViewPlugin";
 import TextFormatToolbarPlugin from "./TextFormatToolbarPlugin";
 
+// * UPDATED
 const theme: EditorThemeClasses = {
   ltr: "ltr",
   rtl: "rtl",
   paragraph: "text-black",
-  span: "bg-gray-200",
+  text: {
+    bold: 'font-extrabold',
+    underline: 'underline',
+    strikethrough: 'line-through'
+  }
 };
 
 const Editor = () => {
+
+
   const initialConfig = {
     namespace: "MyEditor",
     theme,
@@ -40,12 +48,10 @@ const Editor = () => {
       {/*  UI Plugin */}
 
       {/* Functional Plugin */}
+      <DefaultContentPlugin defaultText={["Bold - Underline - Italic - Highlight - Code - Strikethrough - Subscript - SuperScript"]} />
       <OnChangePlugin
         onChange={(editorState) => {
-          console.log(
-            "do anything with the editor state here",
-            editorState.toJSON()
-          );
+          // do something when stuff changes
         }}
       />
       <HistoryPlugin />

@@ -44,10 +44,10 @@ const RichTextWithTreeViewPlugin = () => {
       {/* Functional Plugin */}
       <OnChangePlugin
         onChange={(editorState) => {
-          console.log(
-            "do anything with the editor state here",
-            editorState.toJSON()
-          );
+          // console.log(
+          //   "do anything with the editor state here",
+          //   editorState.toJSON()
+          // );
         }}
       />
       <HistoryPlugin />

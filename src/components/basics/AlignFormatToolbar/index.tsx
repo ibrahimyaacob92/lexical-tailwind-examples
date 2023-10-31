@@ -6,6 +6,7 @@ import LexicalErrorBoundary from "@lexical/react/LexicalErrorBoundary";
 import { HistoryPlugin } from "@lexical/react/LexicalHistoryPlugin";
 import { OnChangePlugin } from "@lexical/react/LexicalOnChangePlugin";
 import { RichTextPlugin } from "@lexical/react/LexicalRichTextPlugin";
+import DefaultContentPlugin from "../WithDefaultContent/DefaultContentPlugin";
 import TreeViewPlugin from "../WithTreeViewPlugin/TreeViewPlugin";
 import AlignFormatToolbarPlugin from "./AlignFormatToolbarPlugin";
 
@@ -42,12 +43,10 @@ const Editor = () => {
       {/* Functional Plugin */}
       <OnChangePlugin
         onChange={(editorState) => {
-          console.log(
-            "do anything with the editor state here",
-            editorState.toJSON()
-          );
+          //  do something
         }}
       />
+      <DefaultContentPlugin defaultText={["Left", "Center", "Right"]} />
       <HistoryPlugin />
       <br />
 

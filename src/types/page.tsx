@@ -3,6 +3,7 @@ export enum BasicPage {
   STYLED_PLAIN = "styled-plain-editor",
   RICH_TEXT = "basic-rich-text",
   TREE_VIEW = "treeview-plugin",
+  WITH_DEFAULT_CONTENT = "with-default-content",
   TEXT_FORMAT_TOOLBAR = "text-format-toolbar",
   ALIGNMENT = "align-format-toolbar",
   // TODO

@@ -12,9 +12,9 @@ const Sidebar = () => {
   const slug = router.query.slug;
 
   return (
-    <div className="sticky top-0 flex h-screen w-[200px] flex-col gap-2 border-r p-3">
+    <div className="sticky top-0 flex h-screen w-[240px] flex-shrink-0 flex-col gap-2 border-r p-3">
       <Link href={"/"}>
-        <p className="font-bold">Lexical + Tailwind Examples</p>
+        <p className="font-bold whitespace-nowrap">Lexical + Tailwind Examples</p>
       </Link>
       <hr />
       <div>
@@ -23,6 +23,7 @@ const Sidebar = () => {
           <Link key={`basics-${page}`} href={`/basics/${page}`}>
             <p
               className={clsx(
+                "whitespace-nowrap",
                 page === slug ? "text-blue-800 underline" : "text-gray-700"
               )}
             >
@@ -36,7 +37,7 @@ const Sidebar = () => {
         <p className="font-bold">Intermediate</p>
         {intermediatePageList.map((page) => (
           <Link key={`basics-${page}`} href={`/basics/${page}`}>
-            <p> {page}</p>
+            <p className=" whitespace-nowrap"> {page}</p>
           </Link>
         ))}
       </div>
@@ -44,7 +45,7 @@ const Sidebar = () => {
         <p className="font-bold">Advanced</p>
         {advancedPageList.map((page) => (
           <Link key={`basics-${page}`} href={`/basics/${page}`}>
-            <p> {page}</p>
+            <p className=" whitespace-nowrap"> {page}</p>
           </Link>
         ))}
       </div>
