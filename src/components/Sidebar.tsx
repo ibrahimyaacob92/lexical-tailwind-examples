@@ -5,7 +5,7 @@ import {
   advancedPageList,
   basicPageList,
   intermediatePageList,
-} from "~/types/page";
+} from "~/types/pageList";
 
 const Sidebar = () => {
   const router = useRouter();

@@ -1,7 +1,8 @@
 import { type ReactNode } from "react";
-import { BasicPage } from "~/types/page";
+import { BasicPage } from "~/types/pageList";
 import NoDocYet from "../NoDocYet";
 import AlignFormatToolbarPlugin from "./AlignFormatToolbar";
+import FontSizesToolBar from "./FontSizesToolBar";
 import HeadingToolbar from "./HeadingToolbar";
 import PlainStupid from "./PlainStupid";
 import Doc from "./PlainStupid/Doc";
@@ -47,8 +48,8 @@ const componentMap: Record<BasicPage, { doc: ReactNode; preview: ReactNode }> =
     preview: <WithDefaultContent />,
   },
   [BasicPage.FONT_SIZE]: {
-    doc: undefined,
-    preview: undefined
+    doc: <NoDocYet />,
+    preview: <FontSizesToolBar />
   },
   [BasicPage.MULTIPLE_FONT]: {
     doc: undefined,

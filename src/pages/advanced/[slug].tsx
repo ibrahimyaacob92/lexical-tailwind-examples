@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 import MainLayout from "~/components/MainLayout";
 import NoDocYet from "~/components/NoDocYet";
-import { advancedPageList, type AdvancedPage } from "~/types/page";
+import { advancedPageList, type AdvancedPage } from "~/types/pageList";
 
 const AdvancedExamplesPage = () => {
   const router = useRouter();

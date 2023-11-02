@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 import MainLayout from "~/components/MainLayout";
 import NoDocYet from "~/components/NoDocYet";
-import { intermediatePageList, type IntermediatePage } from "~/types/page";
+import { intermediatePageList, type IntermediatePage } from "~/types/pageList";
 
 const IntermediateExamplesPage = () => {
   const router = useRouter();

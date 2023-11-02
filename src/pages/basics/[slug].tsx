@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 import MainLayout from "~/components/MainLayout";
 import componentMap from "~/components/basics/ComponentMap";
-import { basicPageList, type BasicPage } from "~/types/page";
+import { basicPageList, type BasicPage } from "~/types/pageList";
 
 const BasicExamplesPage = () => {
   const router = useRouter();
