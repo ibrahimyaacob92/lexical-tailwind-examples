@@ -12,9 +12,9 @@ export enum BasicPage {
   FONT_FAMILY = "font-family-toolbar",
   TEXT_COLOR = 'text-color-toolbar',
   TEXT_BACKGROUND_COLOR = 'text-background-toolbar',
-  // TODO
   UNDO_REDO = "undo-redo",
-  DIVIDER = "divider-node",
+  HORIZONTAL_RULE = "horizontal-rule-node",
+  // TODO
   TAB_INDENT = "tab-indent",
   GET_SELECTION = "get-selection",
   MARK_SELECTION = "mark-selection",

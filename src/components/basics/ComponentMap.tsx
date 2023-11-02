@@ -5,6 +5,7 @@ import AlignFormatToolbarPlugin from "./AlignFormatToolbar";
 import FontFamilyToolbar from "./FontFamilyToolBar";
 import FontSizesToolBar from "./FontSizesToolBar";
 import HeadingToolbar from "./HeadingToolbar";
+import HorizontalRule from "./HorizontalRule";
 import PlainStupid from "./PlainStupid";
 import Doc from "./PlainStupid/Doc";
 import RichText from "./RichText";
@@ -15,7 +16,7 @@ import TextColorToolbar from "./TextColorToolBar";
 import TextFormatToolbar from "./TextFormatToolbar";
 import UndoRedo from "./UndoRedo";
 import WithDefaultContent from "./WithDefaultContent";
-import RichTextWithTreeViewPlugin from "./WithTreeViewPlugin";
+import RichTextWithTreeView from "./WithTreeViewPlugin";
 
 const componentMap: Record<BasicPage, { doc: ReactNode; preview: ReactNode }> =
 {
@@ -33,7 +34,7 @@ const componentMap: Record<BasicPage, { doc: ReactNode; preview: ReactNode }> =
   },
   [BasicPage.TREE_VIEW]: {
     doc: <NoDocYet />,
-    preview: <RichTextWithTreeViewPlugin />,
+    preview: <RichTextWithTreeView />,
   },
   [BasicPage.TEXT_FORMAT_TOOLBAR]: {
     doc: <NoDocYet />,
@@ -60,11 +61,6 @@ const componentMap: Record<BasicPage, { doc: ReactNode; preview: ReactNode }> =
     preview: <FontFamilyToolbar />
   },
   [BasicPage.TAB_INDENT]: {
-    doc: undefined,
-    preview: undefined
-  },
-
-  [BasicPage.DIVIDER]: {
     doc: undefined,
     preview: undefined
   },
@@ -103,6 +99,10 @@ const componentMap: Record<BasicPage, { doc: ReactNode; preview: ReactNode }> =
   [BasicPage.UNDO_REDO]: {
     doc: <NoDocYet />,
     preview: <UndoRedo />
+  },
+  [BasicPage.HORIZONTAL_RULE]: {
+    doc: undefined,
+    preview: <HorizontalRule />
   }
 };
 
