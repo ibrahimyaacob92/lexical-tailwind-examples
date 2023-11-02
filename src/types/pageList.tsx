@@ -10,7 +10,7 @@ export enum BasicPage {
   HEADERS = "headings-toolbar",
   // TODO
   FONT_SIZE = "font-sizes-toolbar",
-  MULTIPLE_FONT = "multiple-fonts",
+  FONT_FAMILY = "font-family-plugin",
   TAB_INDENT = "tab-indent",
   HIGHLIGHT = "highlight-text-color",
   DIVIDER = "divider-node",

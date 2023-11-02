@@ -7,7 +7,7 @@ import { RichTextPlugin } from "@lexical/react/LexicalRichTextPlugin";
 import { type EditorThemeClasses } from "lexical";
 import DefaultContentPlugin from "../WithDefaultContent/DefaultContentPlugin";
 import TreeViewPlugin from "../WithTreeViewPlugin/TreeViewPlugin";
-import HeadersToolbarPlugin from "./FontSizesToolbarPlugin";
+import HeadersToolbarPlugin from "./FontFamilyToolbarPlugin";
 
 const theme: EditorThemeClasses = {
   ltr: "ltr",

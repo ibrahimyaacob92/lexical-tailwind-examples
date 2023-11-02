@@ -2,6 +2,7 @@ import { type ReactNode } from "react";
 import { BasicPage } from "~/types/pageList";
 import NoDocYet from "../NoDocYet";
 import AlignFormatToolbarPlugin from "./AlignFormatToolbar";
+import FontFamilyToolbar from "./FontFamilyToolBar";
 import FontSizesToolBar from "./FontSizesToolBar";
 import HeadingToolbar from "./HeadingToolbar";
 import PlainStupid from "./PlainStupid";
@@ -51,9 +52,9 @@ const componentMap: Record<BasicPage, { doc: ReactNode; preview: ReactNode }> =
     doc: <NoDocYet />,
     preview: <FontSizesToolBar />
   },
-  [BasicPage.MULTIPLE_FONT]: {
-    doc: undefined,
-    preview: undefined
+  [BasicPage.FONT_FAMILY]: {
+    doc: <NoDocYet />,
+    preview: <FontFamilyToolbar />
   },
   [BasicPage.TAB_INDENT]: {
     doc: undefined,
