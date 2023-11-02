@@ -10,8 +10,10 @@ import Doc from "./PlainStupid/Doc";
 import RichText from "./RichText";
 import SaveLoadState from "./SaveLoadState";
 import StyledPlain from "./StyledPlainEditor";
+import TextBackgroundToolBar from "./TextBackgroundToolBar";
 import TextColorToolbar from "./TextColorToolBar";
 import TextFormatToolbar from "./TextFormatToolbar";
+import UndoRedo from "./UndoRedo";
 import WithDefaultContent from "./WithDefaultContent";
 import RichTextWithTreeViewPlugin from "./WithTreeViewPlugin";
 
@@ -61,10 +63,7 @@ const componentMap: Record<BasicPage, { doc: ReactNode; preview: ReactNode }> =
     doc: undefined,
     preview: undefined
   },
-  [BasicPage.HIGHLIGHT]: {
-    doc: undefined,
-    preview: undefined
-  },
+
   [BasicPage.DIVIDER]: {
     doc: undefined,
     preview: undefined
@@ -99,7 +98,11 @@ const componentMap: Record<BasicPage, { doc: ReactNode; preview: ReactNode }> =
   },
   [BasicPage.TEXT_BACKGROUND_COLOR]: {
     doc: <NoDocYet />,
-    preview: undefined
+    preview: <TextBackgroundToolBar />
+  },
+  [BasicPage.UNDO_REDO]: {
+    doc: <NoDocYet />,
+    preview: <UndoRedo />
   }
 };
 

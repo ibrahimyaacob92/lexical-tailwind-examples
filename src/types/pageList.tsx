@@ -13,9 +13,9 @@ export enum BasicPage {
   TEXT_COLOR = 'text-color-toolbar',
   TEXT_BACKGROUND_COLOR = 'text-background-toolbar',
   // TODO
-  TAB_INDENT = "tab-indent",
-  HIGHLIGHT = "highlight-text-color",
+  UNDO_REDO = "undo-redo",
   DIVIDER = "divider-node",
+  TAB_INDENT = "tab-indent",
   GET_SELECTION = "get-selection",
   MARK_SELECTION = "mark-selection",
   HASHTAG = "hashtag",

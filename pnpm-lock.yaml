@@ -14,6 +14,9 @@ dependencies:
   '@lexical/selection':
     specifier: ^0.12.2
     version: 0.12.2(lexical@0.11.3)
+  '@lexical/utils':
+    specifier: ^0.12.2
+    version: 0.12.2(lexical@0.11.3)
   '@prisma/client':
     specifier: ^5.0.0
     version: 5.0.0(prisma@5.0.0)
