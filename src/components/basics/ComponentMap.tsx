@@ -10,6 +10,7 @@ import Doc from "./PlainStupid/Doc";
 import RichText from "./RichText";
 import SaveLoadState from "./SaveLoadState";
 import StyledPlain from "./StyledPlainEditor";
+import TextColorToolbar from "./TextColorToolBar";
 import TextFormatToolbar from "./TextFormatToolbar";
 import WithDefaultContent from "./WithDefaultContent";
 import RichTextWithTreeViewPlugin from "./WithTreeViewPlugin";
@@ -91,6 +92,14 @@ const componentMap: Record<BasicPage, { doc: ReactNode; preview: ReactNode }> =
   [BasicPage.HEADERS]: {
     doc: <NoDocYet />,
     preview: <HeadingToolbar />
+  },
+  [BasicPage.TEXT_COLOR]: {
+    doc: <NoDocYet />,
+    preview: <TextColorToolbar />
+  },
+  [BasicPage.TEXT_BACKGROUND_COLOR]: {
+    doc: <NoDocYet />,
+    preview: undefined
   }
 };
 

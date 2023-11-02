@@ -10,21 +10,21 @@ type Props = {
   className?: string;
 };
 
-const fontSizes = ['8px', '15px', '20px', '30px']
-const defaultFontSize = '15px'
+const colors = ['black', 'red', 'green', 'blue', 'yellow']
+const defaultColor = 'black'
 
-export default function FontSizesToolbarPlugin({ className }: Props) {
+export default function ColorToolbarPlugin({ className }: Props) {
   const [editor] = useLexicalComposerContext();
-  const [fontSize, setFontSize] = useState<string>(defaultFontSize);
+  const [color, setColor] = useState<string>(defaultColor);
 
-  const updateFontSize = (fontSize: string) => {
+  const updateColor = (color: string) => {
     editor.update(() => {
       const selection = $getSelection();
       if (
         $isRangeSelection(selection)
       ) {
         $patchStyleText(selection, {
-          'font-size': fontSize,
+          'color': color,
         });
       }
     });
@@ -36,8 +36,8 @@ export default function FontSizesToolbarPlugin({ className }: Props) {
       editor.update(() => {
         const selection = $getSelection();
         if ($isRangeSelection(selection)) {
-          setFontSize(
-            $getSelectionStyleValueForProperty(selection, 'font-size', defaultFontSize),
+          setColor(
+            $getSelectionStyleValueForProperty(selection, 'color', defaultColor),
           );
 
         }
@@ -48,14 +48,14 @@ export default function FontSizesToolbarPlugin({ className }: Props) {
 
   return (
     <div className={clsx("flex gap-1", className)}>
-      {fontSizes.map((fz) => <button
-        key={fz}
+      {colors.map((font) => <button
+        key={font}
         className={clsx("rounded border p-2"
-          , fontSize === fz && 'bg-green-200'
+          , color === font && 'bg-green-200'
         )}
-        onClick={() => updateFontSize(fz)}
+        onClick={() => updateColor(font)}
       >
-        {fz}
+        {font}
       </button>
       )}
     </div>)

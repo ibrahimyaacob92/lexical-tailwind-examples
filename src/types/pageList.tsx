@@ -8,9 +8,11 @@ export enum BasicPage {
   TEXT_FORMAT_TOOLBAR = "text-format-toolbar",
   ALIGNMENT = "align-format-toolbar",
   HEADERS = "headings-toolbar",
-  // TODO
   FONT_SIZE = "font-sizes-toolbar",
-  FONT_FAMILY = "font-family-plugin",
+  FONT_FAMILY = "font-family-toolbar",
+  TEXT_COLOR = 'text-color-toolbar',
+  TEXT_BACKGROUND_COLOR = 'text-background-toolbar',
+  // TODO
   TAB_INDENT = "tab-indent",
   HIGHLIGHT = "highlight-text-color",
   DIVIDER = "divider-node",
