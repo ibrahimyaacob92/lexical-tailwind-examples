@@ -6,8 +6,9 @@ export enum BasicPage {
   WITH_DEFAULT_CONTENT = "with-default-content",
   TEXT_FORMAT_TOOLBAR = "text-format-toolbar",
   ALIGNMENT = "align-format-toolbar",
-  // TODO
   SAVE_LOAD = "save-load-state",
+  // TODO
+  HEADERS = "headings-toolbar",
   FONT_SIZE = "font-size",
   MULTIPLE_FONT = "multiple-fonts",
   TAB_INDENT = "tab-indent",

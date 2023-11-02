@@ -1,9 +1,19 @@
 lockfileVersion: '6.0'
 
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
 dependencies:
   '@lexical/react':
     specifier: ^0.11.3
     version: 0.11.3(lexical@0.11.3)(react-dom@18.2.0)(react@18.2.0)(yjs@13.6.7)
+  '@lexical/rich-text':
+    specifier: ^0.12.2
+    version: 0.12.2(@lexical/clipboard@0.12.2)(@lexical/selection@0.12.2)(@lexical/utils@0.12.2)(lexical@0.11.3)
+  '@lexical/selection':
+    specifier: ^0.12.2
+    version: 0.12.2(lexical@0.11.3)
   '@prisma/client':
     specifier: ^5.0.0
     version: 5.0.0(prisma@5.0.0)
@@ -213,6 +223,18 @@ packages:
       lexical: 0.11.3
     dev: false
 
+  /@lexical/clipboard@0.12.2(lexical@0.11.3):
+    resolution: {integrity: sha512-RldmfZquuJJJCJ5WquCyoJ1/eZ+AnNgdksqvd+G+Yn/GyJl/+O3dnHM0QVaDSPvh/PynLFcCtz/57ySLo2kQxQ==}
+    peerDependencies:
+      lexical: 0.12.2
+    dependencies:
+      '@lexical/html': 0.12.2(lexical@0.11.3)
+      '@lexical/list': 0.12.2(lexical@0.11.3)
+      '@lexical/selection': 0.12.2(lexical@0.11.3)
+      '@lexical/utils': 0.12.2(lexical@0.11.3)
+      lexical: 0.11.3
+    dev: false
+
   /@lexical/code@0.11.3(lexical@0.11.3):
     resolution: {integrity: sha512-BIMPd2op65iP4N9SkKIUVodZoWeSsnk6skNJ8UHBO/Rg0ZxyAqxLpnBhEgHq2QOoTBbEW6OEFtkc7/+f9LINZg==}
     peerDependencies:
@@ -258,6 +280,15 @@ packages:
       lexical: 0.11.3
     dev: false
 
+  /@lexical/html@0.12.2(lexical@0.11.3):
+    resolution: {integrity: sha512-LWUO6OKhDtDZa9X1spHAqzsp+4EF01exis4cz5H9y2sHi7EofogXnRCadZ+fa07NVwPVTZWsStkk5qdSe/NEzg==}
+    peerDependencies:
+      lexical: 0.12.2
+    dependencies:
+      '@lexical/selection': 0.12.2(lexical@0.11.3)
+      lexical: 0.11.3
+    dev: false
+
   /@lexical/link@0.11.3(lexical@0.11.3):
     resolution: {integrity: sha512-stAjIrDrF18dPKK25ExPwMCcMe0KKD0FWVzo3F7ejh9DvrQcLFeBPcs8ze71chS3D5fQDB/CzdwvMjEViKmq2A==}
     peerDependencies:
@@ -273,6 +304,15 @@ packages:
       lexical: 0.11.3
     dependencies:
       '@lexical/utils': 0.11.3(lexical@0.11.3)
+      lexical: 0.11.3
+    dev: false
+
+  /@lexical/list@0.12.2(lexical@0.11.3):
+    resolution: {integrity: sha512-3CyWtYQC+IlK4cK/oiD8Uz1gSXD8UcKGOF2vVsDXkMU06O6zvHNmHZOnVJqA0JVNgZAoR9dMR1fi2xd4iuCAiw==}
+    peerDependencies:
+      lexical: 0.12.2
+    dependencies:
+      '@lexical/utils': 0.12.2(lexical@0.11.3)
       lexical: 0.11.3
     dev: false
 
@@ -378,10 +418,32 @@ packages:
       lexical: 0.11.3
     dev: false
 
+  /@lexical/rich-text@0.12.2(@lexical/clipboard@0.12.2)(@lexical/selection@0.12.2)(@lexical/utils@0.12.2)(lexical@0.11.3):
+    resolution: {integrity: sha512-igsEuv7CwBOAj5c8jeE41cnx6zkhI/Bkbu4W7shT6S6lNA/3cnyZpAMlgixwyK5RoqjGRCT+IJK5l6yBxQfNkw==}
+    peerDependencies:
+      '@lexical/clipboard': 0.12.2
+      '@lexical/selection': 0.12.2
+      '@lexical/utils': 0.12.2
+      lexical: 0.12.2
+    dependencies:
+      '@lexical/clipboard': 0.12.2(lexical@0.11.3)
+      '@lexical/selection': 0.12.2(lexical@0.11.3)
+      '@lexical/utils': 0.12.2(lexical@0.11.3)
+      lexical: 0.11.3
+    dev: false
+
   /@lexical/selection@0.11.3(lexical@0.11.3):
     resolution: {integrity: sha512-15lQpcKT/vd7XZ5pnF1nb+kpKb72e9Yi1dVqieSxTeXkzt1cAZFKP3NB4RlhOKCv1N+glSBnjSxRwgsFfbD+NQ==}
     peerDependencies:
       lexical: 0.11.3
+    dependencies:
+      lexical: 0.11.3
+    dev: false
+
+  /@lexical/selection@0.12.2(lexical@0.11.3):
+    resolution: {integrity: sha512-h+g3oOnihHKIyLTyG6uLCEVR/DmUEVdCcZO1iAoGsuW7nwWiWNPWj6oZ3Cw5J1Mk5u62DHnkkVDQsVSZbAwmtg==}
+    peerDependencies:
+      lexical: 0.12.2
     dependencies:
       lexical: 0.11.3
     dev: false
@@ -392,6 +454,15 @@ packages:
       lexical: 0.11.3
     dependencies:
       '@lexical/utils': 0.11.3(lexical@0.11.3)
+      lexical: 0.11.3
+    dev: false
+
+  /@lexical/table@0.12.2(lexical@0.11.3):
+    resolution: {integrity: sha512-tiAmTq6RKHDVER9v589Ajm9/RL+WTF1WschrH6HHVCtil6cfJfTJeJ+MF45+XEzB9fkqy2LfrScAfWxqLjVePA==}
+    peerDependencies:
+      lexical: 0.12.2
+    dependencies:
+      '@lexical/utils': 0.12.2(lexical@0.11.3)
       lexical: 0.11.3
     dev: false
 
@@ -411,6 +482,17 @@ packages:
       '@lexical/list': 0.11.3(lexical@0.11.3)
       '@lexical/selection': 0.11.3(lexical@0.11.3)
       '@lexical/table': 0.11.3(lexical@0.11.3)
+      lexical: 0.11.3
+    dev: false
+
+  /@lexical/utils@0.12.2(lexical@0.11.3):
+    resolution: {integrity: sha512-xW4y4l2Yd37+qLwkBvBGyzsKCA9wnh1ljphBJeR2vreT193i2gaIwuku2ZKlER14VHw4192qNJF7vUoAEmwurQ==}
+    peerDependencies:
+      lexical: 0.12.2
+    dependencies:
+      '@lexical/list': 0.12.2(lexical@0.11.3)
+      '@lexical/selection': 0.12.2(lexical@0.11.3)
+      '@lexical/table': 0.12.2(lexical@0.11.3)
       lexical: 0.11.3
     dev: false
 
@@ -458,6 +540,7 @@ packages:
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [linux]
+    libc: [glibc]
     requiresBuild: true
     dev: false
     optional: true
@@ -467,6 +550,7 @@ packages:
     engines: {node: '>= 10'}
     cpu: [arm64]
     os: [linux]
+    libc: [musl]
     requiresBuild: true
     dev: false
     optional: true
@@ -476,6 +560,7 @@ packages:
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [linux]
+    libc: [glibc]
     requiresBuild: true
     dev: false
     optional: true
@@ -485,6 +570,7 @@ packages:
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [linux]
+    libc: [musl]
     requiresBuild: true
     dev: false
     optional: true
@@ -1459,7 +1545,7 @@ packages:
       eslint: 8.40.0
       eslint-import-resolver-node: 0.3.7
       eslint-import-resolver-typescript: 3.5.5(@typescript-eslint/parser@5.62.0)(eslint-import-resolver-node@0.3.7)(eslint-plugin-import@2.28.0)(eslint@8.40.0)
-      eslint-plugin-import: 2.28.0(@typescript-eslint/parser@5.62.0)(eslint-import-resolver-typescript@3.5.5)(eslint@8.40.0)
+      eslint-plugin-import: 2.28.0(@typescript-eslint/parser@6.0.0)(eslint@8.40.0)
       eslint-plugin-jsx-a11y: 6.7.1(eslint@8.40.0)
       eslint-plugin-react: 7.33.1(eslint@8.40.0)
       eslint-plugin-react-hooks: 4.6.0(eslint@8.40.0)
@@ -1490,7 +1576,7 @@ packages:
       enhanced-resolve: 5.15.0
       eslint: 8.40.0
       eslint-module-utils: 2.8.0(@typescript-eslint/parser@5.62.0)(eslint-import-resolver-node@0.3.7)(eslint-import-resolver-typescript@3.5.5)(eslint@8.40.0)
-      eslint-plugin-import: 2.28.0(@typescript-eslint/parser@5.62.0)(eslint-import-resolver-typescript@3.5.5)(eslint@8.40.0)
+      eslint-plugin-import: 2.28.0(@typescript-eslint/parser@6.0.0)(eslint@8.40.0)
       get-tsconfig: 4.6.2
       globby: 13.2.2
       is-core-module: 2.12.1
@@ -1533,7 +1619,36 @@ packages:
       - supports-color
     dev: true
 
-  /eslint-plugin-import@2.28.0(@typescript-eslint/parser@5.62.0)(eslint-import-resolver-typescript@3.5.5)(eslint@8.40.0):
+  /eslint-module-utils@2.8.0(@typescript-eslint/parser@6.0.0)(eslint-import-resolver-node@0.3.7)(eslint@8.40.0):
+    resolution: {integrity: sha512-aWajIYfsqCKRDgUfjEXNN/JlrzauMuSEy5sbd7WXbtW3EH6A6MpwEh42c7qD+MqQo9QMJ6fWLAeIJynx0g6OAw==}
+    engines: {node: '>=4'}
+    peerDependencies:
+      '@typescript-eslint/parser': '*'
+      eslint: '*'
+      eslint-import-resolver-node: '*'
+      eslint-import-resolver-typescript: '*'
+      eslint-import-resolver-webpack: '*'
+    peerDependenciesMeta:
+      '@typescript-eslint/parser':
+        optional: true
+      eslint:
+        optional: true
+      eslint-import-resolver-node:
+        optional: true
+      eslint-import-resolver-typescript:
+        optional: true
+      eslint-import-resolver-webpack:
+        optional: true
+    dependencies:
+      '@typescript-eslint/parser': 6.0.0(eslint@8.40.0)(typescript@5.0.4)
+      debug: 3.2.7
+      eslint: 8.40.0
+      eslint-import-resolver-node: 0.3.7
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
+
+  /eslint-plugin-import@2.28.0(@typescript-eslint/parser@6.0.0)(eslint@8.40.0):
     resolution: {integrity: sha512-B8s/n+ZluN7sxj9eUf7/pRFERX0r5bnFA2dCaLHy2ZeaQEAz0k+ZZkFWRFHJAqxfxQDx6KLv9LeIki7cFdwW+Q==}
     engines: {node: '>=4'}
     peerDependencies:
@@ -1543,7 +1658,7 @@ packages:
       '@typescript-eslint/parser':
         optional: true
     dependencies:
-      '@typescript-eslint/parser': 5.62.0(eslint@8.40.0)(typescript@5.0.4)
+      '@typescript-eslint/parser': 6.0.0(eslint@8.40.0)(typescript@5.0.4)
       array-includes: 3.1.6
       array.prototype.findlastindex: 1.2.2
       array.prototype.flat: 1.3.1
@@ -1552,7 +1667,7 @@ packages:
       doctrine: 2.1.0
       eslint: 8.40.0
       eslint-import-resolver-node: 0.3.7
-      eslint-module-utils: 2.8.0(@typescript-eslint/parser@5.62.0)(eslint-import-resolver-node@0.3.7)(eslint-import-resolver-typescript@3.5.5)(eslint@8.40.0)
+      eslint-module-utils: 2.8.0(@typescript-eslint/parser@6.0.0)(eslint-import-resolver-node@0.3.7)(eslint@8.40.0)
       has: 1.0.3
       is-core-module: 2.12.1
       is-glob: 4.0.3

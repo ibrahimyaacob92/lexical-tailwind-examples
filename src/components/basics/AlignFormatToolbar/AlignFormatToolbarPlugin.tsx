@@ -10,8 +10,6 @@ export default function AlignFormatToolbarPlugin({ className }: Props) {
   const [editor] = useLexicalComposerContext();
   const [elementFormat, setElementFormat] = useState<ElementFormatType>('left');
 
-
-
   const handleTextFormat = (paragraphType: ElementFormatType) => {
     editor.dispatchCommand(FORMAT_ELEMENT_COMMAND, paragraphType);
   };

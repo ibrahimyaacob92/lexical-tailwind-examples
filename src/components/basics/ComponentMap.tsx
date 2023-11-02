@@ -2,6 +2,7 @@ import { type ReactNode } from "react";
 import { BasicPage } from "~/types/page";
 import NoDocYet from "../NoDocYet";
 import AlignFormatToolbarPlugin from "./AlignFormatToolbar";
+import HeadingToolbar from "./HeadingToolbar";
 import PlainStupid from "./PlainStupid";
 import Doc from "./PlainStupid/Doc";
 import RichText from "./RichText";
@@ -84,6 +85,10 @@ const componentMap: Record<BasicPage, { doc: ReactNode; preview: ReactNode }> =
   [BasicPage.LINK]: {
     doc: undefined,
     preview: undefined
+  },
+  [BasicPage.HEADERS]: {
+    doc: <NoDocYet />,
+    preview: <HeadingToolbar />
   }
 };
 

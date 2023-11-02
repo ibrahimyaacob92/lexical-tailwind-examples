@@ -6,6 +6,7 @@ import { useEffect } from 'react';
 const DefaultContentPlugin = ({ defaultText }: { defaultText: string[] }) => {
   const [editor] = useLexicalComposerContext();
 
+  // 
   useEffect(() => {
     editor.update(() => {
       const rootNode = $getRoot()
