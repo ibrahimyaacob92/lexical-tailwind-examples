@@ -11,6 +11,7 @@ import Doc from "./PlainStupid/Doc";
 import RichText from "./RichText";
 import SaveLoadState from "./SaveLoadState";
 import StyledPlain from "./StyledPlainEditor";
+import TabIndent from "./TabIndent";
 import TextBackgroundToolBar from "./TextBackgroundToolBar";
 import TextColorToolbar from "./TextColorToolBar";
 import TextFormatToolbar from "./TextFormatToolbar";
@@ -61,8 +62,8 @@ const componentMap: Record<BasicPage, { doc: ReactNode; preview: ReactNode }> =
     preview: <FontFamilyToolbar />
   },
   [BasicPage.TAB_INDENT]: {
-    doc: undefined,
-    preview: undefined
+    doc: <NoDocYet />,
+    preview: <TabIndent />
   },
   [BasicPage.GET_SELECTION]: {
     doc: undefined,

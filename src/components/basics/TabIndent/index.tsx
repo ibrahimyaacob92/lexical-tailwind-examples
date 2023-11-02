@@ -4,12 +4,12 @@ import { LexicalComposer } from "@lexical/react/LexicalComposer";
 import { ContentEditable } from "@lexical/react/LexicalContentEditable";
 import LexicalErrorBoundary from "@lexical/react/LexicalErrorBoundary";
 import { HistoryPlugin } from "@lexical/react/LexicalHistoryPlugin";
-import { HorizontalRuleNode } from "@lexical/react/LexicalHorizontalRuleNode";
 import { OnChangePlugin } from "@lexical/react/LexicalOnChangePlugin";
 import { RichTextPlugin } from "@lexical/react/LexicalRichTextPlugin";
+import { TabIndentationPlugin } from '@lexical/react/LexicalTabIndentationPlugin';
 import DefaultContentPlugin from "../WithDefaultContent/DefaultContentPlugin";
 import TreeViewPlugin from "../WithTreeViewPlugin/TreeViewPlugin";
-import HorizontalRuleToolbarPlugin from "./HorizontalRuleToolbarPlugin";
+
 
 const theme: EditorThemeClasses = {
   ltr: "ltr",
@@ -23,13 +23,12 @@ const Editor = () => {
     namespace: "MyEditor",
     theme,
     onError: () => console.log("error"),
-    nodes: [HorizontalRuleNode]
   };
 
   return (
     <LexicalComposer initialConfig={initialConfig}>
-      <HorizontalRuleToolbarPlugin className="mb-2" />
-
+      {/* !  */}
+      <TabIndentationPlugin />
       <div className="editor-wrapper relative">
         <RichTextPlugin
           contentEditable={
@@ -44,7 +43,7 @@ const Editor = () => {
       {/*  UI Plugin */}
 
       {/* Functional Plugin */}
-      <DefaultContentPlugin defaultText={["Insert horizontal rule below", "", "Insert Horizontal rule above"]} />
+      <DefaultContentPlugin defaultText={["Hit tab key to see indent in action"]} />
       <OnChangePlugin
         onChange={(editorState) => {
           // do something when stuff changes
