@@ -1,5 +1,6 @@
 import { type EditorThemeClasses } from "lexical";
 
+import { ListItemNode, ListNode } from '@lexical/list';
 import { LexicalComposer } from "@lexical/react/LexicalComposer";
 import { ContentEditable } from "@lexical/react/LexicalContentEditable";
 import LexicalErrorBoundary from "@lexical/react/LexicalErrorBoundary";
@@ -8,13 +9,31 @@ import { OnChangePlugin } from "@lexical/react/LexicalOnChangePlugin";
 import { RichTextPlugin } from "@lexical/react/LexicalRichTextPlugin";
 import DefaultContentPlugin from "../WithDefaultContent/DefaultContentPlugin";
 import TreeViewPlugin from "../WithTreeViewPlugin/TreeViewPlugin";
-import IndentOutdentToolbarPlugin from "./IndentOutdentToolbarPlugin";
+import ListToolbarPlugin from "./ListToolbarPlugin";
 
-
+// ! List without markdown is pretty unusable
+// TODO: Make the feature toggleable (remove formatting)
 const theme: EditorThemeClasses = {
   ltr: "ltr",
   rtl: "rtl",
   paragraph: "text-black",
+  list: {
+    listitem: 'ml-6',
+    listitemChecked: 'pl-2',
+    listitemUnchecked: 'pl-2 text-orange-600',
+    nested: {
+      listitem: 'pl-2',
+    },
+    olDepth: [
+      'list-decimal pl-2',
+      'list-decimal',
+      'list-decimal',
+      'list-decimal',
+      'list-decimal',
+    ],
+    ul: 'list-disc pl-2',
+  },
+
   // NOTE: Styling with out of the box needs to be done with css
 };
 
@@ -23,12 +42,15 @@ const Editor = () => {
     namespace: "MyEditor",
     theme,
     onError: () => console.log("error"),
+    nodes: [
+      ListNode, ListItemNode
+    ]
   };
 
   return (
     <LexicalComposer initialConfig={initialConfig}>
       {/* !  */}
-      <IndentOutdentToolbarPlugin className="mb-2" />
+      <ListToolbarPlugin className="mb-2" />
       <div className="editor-wrapper relative">
         <RichTextPlugin
           contentEditable={
@@ -43,7 +65,7 @@ const Editor = () => {
       {/*  UI Plugin */}
 
       {/* Functional Plugin */}
-      <DefaultContentPlugin defaultText={["Click the buttons above", "or", "Hit tab key to see indent in action"]} />
+      <DefaultContentPlugin defaultText={["Try out list using button above", "numbered list", "bullet list"]} />
       <OnChangePlugin
         onChange={(editorState) => {
           // do something when stuff changes

@@ -2,7 +2,7 @@ import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext
 import { $createHeadingNode, $isHeadingNode, type HeadingTagType } from "@lexical/rich-text";
 import { $setBlocksType } from "@lexical/selection";
 import clsx from "clsx";
-import { $getSelection, $isElementNode, $isRangeSelection, DEPRECATED_$isGridSelection, type ElementNode } from "lexical";
+import { $getSelection, $isElementNode, $isRangeSelection, type ElementNode } from "lexical";
 import { useEffect, useState } from "react";
 
 type Props = {
@@ -20,8 +20,7 @@ export default function HeadersToolbarPlugin({ className }: Props) {
       editor.update(() => {
         const selection = $getSelection();
         if (
-          $isRangeSelection(selection) ||
-          DEPRECATED_$isGridSelection(selection)
+          $isRangeSelection(selection)
         ) {
           $setBlocksType(selection, () => $createHeadingNode(headingSize));
         }

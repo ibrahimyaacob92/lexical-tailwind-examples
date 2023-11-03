@@ -6,6 +6,7 @@ import FontFamilyToolbar from "./FontFamilyToolBar";
 import FontSizesToolBar from "./FontSizesToolBar";
 import HeadingToolbar from "./HeadingToolbar";
 import HorizontalRule from "./HorizontalRule";
+import List from "./List";
 import PlainStupid from "./PlainStupid";
 import Doc from "./PlainStupid/Doc";
 import RichText from "./RichText";
@@ -77,10 +78,6 @@ const componentMap: Record<BasicPage, { doc: ReactNode; preview: ReactNode }> =
     doc: undefined,
     preview: undefined
   },
-  [BasicPage.LIST]: {
-    doc: undefined,
-    preview: undefined
-  },
   [BasicPage.LINK]: {
     doc: undefined,
     preview: undefined
@@ -104,6 +101,14 @@ const componentMap: Record<BasicPage, { doc: ReactNode; preview: ReactNode }> =
   [BasicPage.HORIZONTAL_RULE]: {
     doc: undefined,
     preview: <HorizontalRule />
+  },
+  [BasicPage.MARKDOWN]: {
+    doc: undefined,
+    preview: undefined
+  },
+  [BasicPage.LIST_WITHOUT_MARKDOWN]: {
+    doc: <NoDocYet />,
+    preview: <List />
   }
 };
 

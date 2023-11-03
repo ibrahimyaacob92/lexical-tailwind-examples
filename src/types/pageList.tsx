@@ -14,13 +14,14 @@ export enum BasicPage {
   TEXT_BACKGROUND_COLOR = 'text-background-toolbar',
   UNDO_REDO = "undo-redo",
   HORIZONTAL_RULE = "horizontal-rule-node",
-  // TODO
   TAB_INDENT = "tab-indent",
+  // TODO
+  LIST_WITHOUT_MARKDOWN = "list-without-markdown",
+  MARKDOWN = 'markdown',
+  LINK = "link",
+  HASHTAG = "hashtag",
   GET_SELECTION = "get-selection",
   MARK_SELECTION = "mark-selection",
-  HASHTAG = "hashtag",
-  LIST = "list",
-  LINK = "link",
 }
 
 export enum IntermediatePage {
