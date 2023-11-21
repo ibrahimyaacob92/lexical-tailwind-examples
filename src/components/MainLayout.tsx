@@ -10,12 +10,13 @@ const MainLayout = ({ children }: Props) => {
   const [doc, preview] = children;
   const router = useRouter();
   const title = kebabToProperCase(router.query.slug as string);
-
   return (
     <div className=" grid h-full w-full grid-cols-2 gap-4 p-3">
       <div className="flex flex-col gap-2 border-r">
         <h1 className="text-lg font-bold">{title}</h1>
+
         <div>{doc}</div>
+        {/* <button onClick={() => window.location.href = 'vscode://file/C:/work/lexical-tailwind-examples/src/components/MainLayout.tsx'}>Code</button> */}
       </div>
       <div className="">{preview}</div>
     </div>
