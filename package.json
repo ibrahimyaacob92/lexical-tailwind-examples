@@ -7,7 +7,8 @@
     "dev": "next dev -p 3011",
     "postinstall": "prisma generate",
     "lint": "next lint",
-    "start": "next start "
+    "start": "next start ",
+    "preinstall": "npx only-allow pnpm"
   },
   "dependencies": {
     "@lexical/list": "^0.12.2",
