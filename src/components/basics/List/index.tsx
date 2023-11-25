@@ -1,6 +1,8 @@
+"use client";
+
 import { type EditorThemeClasses } from "lexical";
 
-import { ListItemNode, ListNode } from '@lexical/list';
+import { ListItemNode, ListNode } from "@lexical/list";
 import { LexicalComposer } from "@lexical/react/LexicalComposer";
 import { ContentEditable } from "@lexical/react/LexicalContentEditable";
 import LexicalErrorBoundary from "@lexical/react/LexicalErrorBoundary";
@@ -18,20 +20,20 @@ const theme: EditorThemeClasses = {
   rtl: "rtl",
   paragraph: "text-black",
   list: {
-    listitem: 'ml-6',
-    listitemChecked: 'pl-2',
-    listitemUnchecked: 'pl-2 text-orange-600',
+    listitem: "ml-6",
+    listitemChecked: "pl-2",
+    listitemUnchecked: "pl-2 text-orange-600",
     nested: {
-      listitem: 'pl-2',
+      listitem: "pl-2",
     },
     olDepth: [
-      'list-decimal pl-2',
-      'list-decimal',
-      'list-decimal',
-      'list-decimal',
-      'list-decimal',
+      "list-decimal pl-2",
+      "list-decimal",
+      "list-decimal",
+      "list-decimal",
+      "list-decimal",
     ],
-    ul: 'list-disc pl-2',
+    ul: "list-disc pl-2",
   },
 
   // NOTE: Styling with out of the box needs to be done with css
@@ -42,9 +44,7 @@ const Editor = () => {
     namespace: "MyEditor",
     theme,
     onError: () => console.log("error"),
-    nodes: [
-      ListNode, ListItemNode
-    ]
+    nodes: [ListNode, ListItemNode],
   };
 
   return (
@@ -65,7 +65,13 @@ const Editor = () => {
       {/*  UI Plugin */}
 
       {/* Functional Plugin */}
-      <DefaultContentPlugin defaultText={["Try out list using button above", "numbered list", "bullet list"]} />
+      <DefaultContentPlugin
+        defaultText={[
+          "Try out list using button above",
+          "numbered list",
+          "bullet list",
+        ]}
+      />
       <OnChangePlugin
         onChange={(editorState) => {
           // do something when stuff changes

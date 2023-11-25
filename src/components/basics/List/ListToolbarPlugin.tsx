@@ -1,10 +1,18 @@
-import { $createListNode, $isListNode, ListNode, type ListType } from '@lexical/list';
+"use client";
+
+import {
+  $createListNode,
+  $isListNode,
+  ListNode,
+  type ListType,
+} from "@lexical/list";
+
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext";
-import { ListPlugin } from '@lexical/react/LexicalListPlugin';
+import { ListPlugin } from "@lexical/react/LexicalListPlugin";
 import { $setBlocksType } from "@lexical/selection";
-import { $findMatchingParent, $getNearestNodeOfType, } from '@lexical/utils';
+import { $findMatchingParent, $getNearestNodeOfType } from "@lexical/utils";
 import clsx from "clsx";
-import { $getSelection, $isRangeSelection, $isRootOrShadowRoot, } from "lexical";
+import { $getSelection, $isRangeSelection, $isRootOrShadowRoot } from "lexical";
 import { useEffect, useState } from "react";
 type Props = {
   className?: string;
@@ -14,14 +22,11 @@ export default function ListToolbarPlugin({ className }: Props) {
   const [editor] = useLexicalComposerContext();
   const [blockListType, setBlockListType] = useState<ListType>();
 
-
   const formatHeading = (listType: ListType) => {
     if (blockListType !== listType) {
       editor.update(() => {
         const selection = $getSelection();
-        if (
-          $isRangeSelection(selection)
-        ) {
+        if ($isRangeSelection(selection)) {
           $setBlocksType(selection, () => $createListNode(listType));
         }
       });
@@ -36,17 +41,17 @@ export default function ListToolbarPlugin({ className }: Props) {
         if ($isRangeSelection(selection)) {
           const anchorNode = selection.anchor.getNode();
           const element =
-            anchorNode.getKey() === 'root'
+            anchorNode.getKey() === "root"
               ? anchorNode
               : $findMatchingParent(anchorNode, (e) => {
-                const parent = e.getParent();
-                return parent !== null && $isRootOrShadowRoot(parent);
-              });
-          console.log({ element })
+                  const parent = e.getParent();
+                  return parent !== null && $isRootOrShadowRoot(parent);
+                });
+          console.log({ element });
           if ($isListNode(element)) {
             const parentList = $getNearestNodeOfType<ListNode>(
               anchorNode,
-              ListNode,
+              ListNode
             );
             const type = parentList
               ? parentList.getListType()
@@ -54,23 +59,28 @@ export default function ListToolbarPlugin({ className }: Props) {
             setBlockListType(type);
           }
         }
-      })
-    })
-  }, [editor])
-
+      });
+    });
+  }, [editor]);
 
   return (
     <>
       <div className={clsx("flex flex-wrap gap-1", className)}>
         <button
-          className={clsx("rounded border p-2", blockListType === 'number' && 'bg-green-200')}
-          onClick={() => formatHeading('number')}
+          className={clsx(
+            "rounded border p-2",
+            blockListType === "number" && "bg-green-200"
+          )}
+          onClick={() => formatHeading("number")}
         >
           Numbered List
         </button>
         <button
-          className={clsx("rounded border p-2", blockListType === 'bullet' && 'bg-green-200')}
-          onClick={() => formatHeading('bullet')}
+          className={clsx(
+            "rounded border p-2",
+            blockListType === "bullet" && "bg-green-200"
+          )}
+          onClick={() => formatHeading("bullet")}
         >
           Bullet List
         </button>

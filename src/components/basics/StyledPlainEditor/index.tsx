@@ -1,3 +1,5 @@
+"use client";
+
 import { type EditorThemeClasses } from "lexical";
 import { useState } from "react";
 

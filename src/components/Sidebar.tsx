@@ -1,6 +1,8 @@
+"use client";
+
 import clsx from "clsx";
 import Link from "next/link";
-import { useRouter } from "next/router";
+import { usePathname, useRouter } from "next/navigation";
 import {
   advancedPageList,
   basicPageList,
@@ -9,12 +11,16 @@ import {
 
 const Sidebar = () => {
   const router = useRouter();
-  const slug = router.query.slug;
+  // const slug = router.
+  const pathname = usePathname();
+  console.log({ pathname });
 
   return (
-    <div className="sticky top-0 flex h-screen w-[250px] flex-shrink-0 flex-col order-r ">
+    <div className="order-r sticky top-0 flex h-screen w-[250px] flex-shrink-0 flex-col ">
       <Link href={"/"}>
-        <p className="font-bold whitespace-nowrap p-3 pb-2 ">Lexical + Tailwind Examples</p>
+        <p className="whitespace-nowrap p-3 pb-2 font-bold ">
+          Lexical + Tailwind Examples
+        </p>
       </Link>
       <hr />
       <div className="overflow-y-scroll px-3 py-2 ">
@@ -24,8 +30,8 @@ const Sidebar = () => {
             <Link key={`basics-${page}`} href={`/basics/${page}`}>
               <p
                 className={clsx(
-                  "whitespace-nowrap",
-                  page === slug ? "text-blue-800 underline" : "text-gray-700"
+                  "whitespace-nowrap"
+                  // page === slug ? "text-blue-800 underline" : "text-gray-700"
                 )}
               >
                 {" "}

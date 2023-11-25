@@ -1,15 +1,26 @@
+"use client";
+
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext";
-import { $createHeadingNode, $isHeadingNode, type HeadingTagType } from "@lexical/rich-text";
+import {
+  $createHeadingNode,
+  $isHeadingNode,
+  type HeadingTagType,
+} from "@lexical/rich-text";
 import { $setBlocksType } from "@lexical/selection";
 import clsx from "clsx";
-import { $getSelection, $isElementNode, $isRangeSelection, type ElementNode } from "lexical";
+import {
+  $getSelection,
+  $isElementNode,
+  $isRangeSelection,
+  type ElementNode,
+} from "lexical";
 import { useEffect, useState } from "react";
 
 type Props = {
   className?: string;
 };
 
-const headings: HeadingTagType[] = ['h1', 'h2', 'h3', 'h4', 'h5']
+const headings: HeadingTagType[] = ["h1", "h2", "h3", "h4", "h5"];
 
 export default function HeadersToolbarPlugin({ className }: Props) {
   const [editor] = useLexicalComposerContext();
@@ -19,9 +30,7 @@ export default function HeadersToolbarPlugin({ className }: Props) {
     if (blockType !== headingSize) {
       editor.update(() => {
         const selection = $getSelection();
-        if (
-          $isRangeSelection(selection)
-        ) {
+        if ($isRangeSelection(selection)) {
           $setBlocksType(selection, () => $createHeadingNode(headingSize));
         }
       });
@@ -35,36 +44,39 @@ export default function HeadersToolbarPlugin({ className }: Props) {
         const selection = $getSelection();
         if ($isRangeSelection(selection)) {
           const node = selection.anchor.getNode();
-          const parent = node.getParent()
+          const parent = node.getParent();
           let element: ElementNode | null;
 
           if ($isElementNode(node)) {
-            element = node
+            element = node;
           } else {
-            element = parent
+            element = parent;
           }
 
           if ($isHeadingNode(element)) {
-            setBlockType(element.getTag())
+            setBlockType(element.getTag());
           } else {
-            setBlockType(undefined)
+            setBlockType(undefined);
           }
         }
-      })
-    })
-  }, [editor])
-
+      });
+    });
+  }, [editor]);
 
   return (
     <div className={clsx("flex gap-1", className)}>
-      {headings.map((h) => <button
-        key={h}
-        className={clsx("rounded border p-2", blockType === h && 'bg-green-200')}
-        onClick={() => formatHeading(h)}
-      >
-        {h}
-      </button>)}
-
+      {headings.map((h) => (
+        <button
+          key={h}
+          className={clsx(
+            "rounded border p-2",
+            blockType === h && "bg-green-200"
+          )}
+          onClick={() => formatHeading(h)}
+        >
+          {h}
+        </button>
+      ))}
     </div>
   );
 }

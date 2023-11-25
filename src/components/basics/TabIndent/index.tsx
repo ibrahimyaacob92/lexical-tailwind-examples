@@ -1,3 +1,5 @@
+"use client";
+
 import { type EditorThemeClasses } from "lexical";
 
 import { LexicalComposer } from "@lexical/react/LexicalComposer";
@@ -9,7 +11,6 @@ import { RichTextPlugin } from "@lexical/react/LexicalRichTextPlugin";
 import DefaultContentPlugin from "../WithDefaultContent/DefaultContentPlugin";
 import TreeViewPlugin from "../WithTreeViewPlugin/TreeViewPlugin";
 import IndentOutdentToolbarPlugin from "./IndentOutdentToolbarPlugin";
-
 
 const theme: EditorThemeClasses = {
   ltr: "ltr",
@@ -43,7 +44,13 @@ const Editor = () => {
       {/*  UI Plugin */}
 
       {/* Functional Plugin */}
-      <DefaultContentPlugin defaultText={["Click the buttons above", "or", "Hit tab key to see indent in action"]} />
+      <DefaultContentPlugin
+        defaultText={[
+          "Click the buttons above",
+          "or",
+          "Hit tab key to see indent in action",
+        ]}
+      />
       <OnChangePlugin
         onChange={(editorState) => {
           // do something when stuff changes

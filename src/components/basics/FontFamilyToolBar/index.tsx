@@ -1,3 +1,5 @@
+"use client";
+
 import { LexicalComposer } from "@lexical/react/LexicalComposer";
 import { ContentEditable } from "@lexical/react/LexicalContentEditable";
 import LexicalErrorBoundary from "@lexical/react/LexicalErrorBoundary";
@@ -53,7 +55,6 @@ const Editor = () => {
         defaultText={[
           "Select here or here or here or here and change up the font sizes",
           "Select here or here or here or here and change up the font sizes",
-
         ]}
       />
       <HistoryPlugin />

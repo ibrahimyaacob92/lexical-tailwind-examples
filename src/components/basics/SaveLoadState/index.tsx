@@ -1,3 +1,5 @@
+"use client";
+
 import { CLEAR_EDITOR_COMMAND, type EditorThemeClasses } from "lexical";
 
 import { LexicalComposer } from "@lexical/react/LexicalComposer";
@@ -38,7 +40,7 @@ const Editor = () => {
         />
       </div>
       {/*  UI Plugin */}
-      <div className="flex gap-2 mt-2 justify-end">
+      <div className="mt-2 flex justify-end gap-2">
         <SavePlugin
           onSaveCallback={(editor) =>
             editor.dispatchCommand(CLEAR_EDITOR_COMMAND, undefined)

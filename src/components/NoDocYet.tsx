@@ -1,7 +1,9 @@
-
 const NoDocYet = () => {
   return (
-    <div>Have not written the documentation for this yet. but feel free to Open a PR</div>
+    <div>
+      Have not written the documentation for this yet. but feel free to Open a
+      PR
+    </div>
   );
 };
 

@@ -1,3 +1,5 @@
+"use client";
+
 import { type EditorThemeClasses } from "lexical";
 
 import { LexicalComposer } from "@lexical/react/LexicalComposer";
@@ -14,12 +16,9 @@ const theme: EditorThemeClasses = {
   ltr: "ltr",
   rtl: "rtl",
   paragraph: "text-black",
-
 };
 
 const Editor = () => {
-
-
   const initialConfig = {
     namespace: "MyEditor",
     theme,
@@ -43,7 +42,12 @@ const Editor = () => {
       {/*  UI Plugin */}
 
       {/* Functional Plugin */}
-      <DefaultContentPlugin defaultText={["Write something and try click undo and redo button", "You can also achieve this with Mod+Z and  Mod+Y"]} />
+      <DefaultContentPlugin
+        defaultText={[
+          "Write something and try click undo and redo button",
+          "You can also achieve this with Mod+Z and  Mod+Y",
+        ]}
+      />
       <OnChangePlugin
         onChange={(editorState) => {
           // do something when stuff changes

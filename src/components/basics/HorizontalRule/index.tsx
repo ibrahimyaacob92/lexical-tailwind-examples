@@ -1,3 +1,5 @@
+"use client";
+
 import { type EditorThemeClasses } from "lexical";
 
 import { LexicalComposer } from "@lexical/react/LexicalComposer";
@@ -23,7 +25,7 @@ const Editor = () => {
     namespace: "MyEditor",
     theme,
     onError: () => console.log("error"),
-    nodes: [HorizontalRuleNode]
+    nodes: [HorizontalRuleNode],
   };
 
   return (
@@ -44,7 +46,13 @@ const Editor = () => {
       {/*  UI Plugin */}
 
       {/* Functional Plugin */}
-      <DefaultContentPlugin defaultText={["Insert horizontal rule below", "", "Insert Horizontal rule above"]} />
+      <DefaultContentPlugin
+        defaultText={[
+          "Insert horizontal rule below",
+          "",
+          "Insert Horizontal rule above",
+        ]}
+      />
       <OnChangePlugin
         onChange={(editorState) => {
           // do something when stuff changes

@@ -10,14 +10,14 @@ export enum BasicPage {
   HEADERS = "headings-toolbar",
   FONT_SIZE = "font-sizes-toolbar",
   FONT_FAMILY = "font-family-toolbar",
-  TEXT_COLOR = 'text-color-toolbar',
-  TEXT_BACKGROUND_COLOR = 'text-background-toolbar',
+  TEXT_COLOR = "text-color-toolbar",
+  TEXT_BACKGROUND_COLOR = "text-background-toolbar",
   UNDO_REDO = "undo-redo",
   HORIZONTAL_RULE = "horizontal-rule-node",
   TAB_INDENT = "tab-indent",
   // TODO
   LIST_WITHOUT_MARKDOWN = "list-without-markdown",
-  MARKDOWN = 'markdown',
+  MARKDOWN = "markdown",
   LINK = "link",
   HASHTAG = "hashtag",
   GET_SELECTION = "get-selection",
@@ -45,3 +45,11 @@ export enum AdvancedPage {
 export const basicPageList = Object.values(BasicPage);
 export const intermediatePageList = Object.values(IntermediatePage);
 export const advancedPageList = Object.values(AdvancedPage);
+
+export enum Difficulties {
+  BASICS = "BASICS",
+  INTERMEDIATE = "INTERMEDIATE",
+  ADVANCED = "ADVANCED",
+}
+
+export const difficultiesList = Object.values(Difficulties);

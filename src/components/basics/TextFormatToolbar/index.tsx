@@ -1,3 +1,5 @@
+"use client";
+
 import { type EditorThemeClasses } from "lexical";
 
 import { LexicalComposer } from "@lexical/react/LexicalComposer";
@@ -16,15 +18,13 @@ const theme: EditorThemeClasses = {
   rtl: "rtl",
   paragraph: "text-black",
   text: {
-    bold: 'font-extrabold',
-    underline: 'underline',
-    strikethrough: 'line-through'
-  }
+    bold: "font-extrabold",
+    underline: "underline",
+    strikethrough: "line-through",
+  },
 };
 
 const Editor = () => {
-
-
   const initialConfig = {
     namespace: "MyEditor",
     theme,
@@ -48,7 +48,11 @@ const Editor = () => {
       {/*  UI Plugin */}
 
       {/* Functional Plugin */}
-      <DefaultContentPlugin defaultText={["Bold - Underline - Italic - Highlight - Code - Strikethrough - Subscript - SuperScript"]} />
+      <DefaultContentPlugin
+        defaultText={[
+          "Bold - Underline - Italic - Highlight - Code - Strikethrough - Subscript - SuperScript",
+        ]}
+      />
       <OnChangePlugin
         onChange={(editorState) => {
           // do something when stuff changes

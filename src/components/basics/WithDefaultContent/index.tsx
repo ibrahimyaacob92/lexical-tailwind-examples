@@ -1,3 +1,5 @@
+"use client";
+
 import { LexicalComposer } from "@lexical/react/LexicalComposer";
 import { ContentEditable } from "@lexical/react/LexicalContentEditable";
 import LexicalErrorBoundary from "@lexical/react/LexicalErrorBoundary";
@@ -13,10 +15,10 @@ const theme: EditorThemeClasses = {
   rtl: "rtl",
   paragraph: "text-black",
   text: {
-    bold: 'font-extrabold',
-    underline: 'underline',
-    strikethrough: 'line-through'
-  }
+    bold: "font-extrabold",
+    underline: "underline",
+    strikethrough: "line-through",
+  },
 };
 // Replacing the editor state with this
 const WithDefaultContent = () => {
@@ -30,12 +32,13 @@ const WithDefaultContent = () => {
     <LexicalComposer initialConfig={initialConfig}>
       <div className="editor-wrapper relative">
         <RichTextPlugin
-
           contentEditable={
-            <ContentEditable className="content-editable rounded-md border p-2 min-h-20" />
+            <ContentEditable className="content-editable min-h-20 rounded-md border p-2" />
           }
           placeholder={
-            <div className="absolute left-2 top-2 opacity-50">Enter some text...</div>
+            <div className="absolute left-2 top-2 opacity-50">
+              Enter some text...
+            </div>
           }
           ErrorBoundary={LexicalErrorBoundary}
         />
