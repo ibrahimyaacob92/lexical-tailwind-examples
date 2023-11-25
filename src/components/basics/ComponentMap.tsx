@@ -8,7 +8,7 @@ import HeadingToolbar from "./HeadingToolbar";
 import HorizontalRule from "./HorizontalRule";
 import List from "./List";
 import PlainStupid from "./PlainStupid";
-import Doc from "./PlainStupid/Doc";
+import PlainStupidDoc from "./PlainStupid/Doc.mdx";
 import RichText from "./RichText";
 import SaveLoadState from "./SaveLoadState";
 import StyledPlain from "./StyledPlainEditor";
@@ -23,7 +23,7 @@ import RichTextWithTreeView from "./WithTreeViewPlugin";
 const componentMap: Record<BasicPage, { doc: ReactNode; preview: ReactNode }> =
   {
     [BasicPage.UNSTYLED_PLAIN]: {
-      doc: <Doc />,
+      doc: <PlainStupidDoc />,
       preview: <PlainStupid />,
     },
     [BasicPage.STYLED_PLAIN]: {

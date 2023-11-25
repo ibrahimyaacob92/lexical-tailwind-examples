@@ -11,7 +11,7 @@ import {
 } from "~/types/pageList";
 import { kebabToProperCase } from "~/utils/textFormatter";
 
-export const runtime = "edge";
+// export const runtime = "edge";
 
 type Props = {
   params: { difficulties: string; examples: string };
