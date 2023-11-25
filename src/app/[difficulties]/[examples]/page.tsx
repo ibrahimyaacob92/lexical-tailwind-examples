@@ -48,9 +48,13 @@ const Page = ({ params }: Props) => {
     redirect("/");
   }
 
+  console.log({
+    componentMap: componentMap[params.examples],
+    exp: params.examples,
+  });
   // import component map
-  const doc = componentMap[params.examples]?.doc ?? "";
-  const preview = componentMap[params.examples]?.preview ?? "";
+  const doc = componentMap[params.examples]?.doc;
+  const preview = componentMap[params.examples]?.preview;
   const title = kebabToProperCase(params.examples);
 
   return (

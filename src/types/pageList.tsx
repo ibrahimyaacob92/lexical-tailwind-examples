@@ -39,7 +39,7 @@ export enum IntermediatePage {
 }
 
 export enum AdvancedPage {
-  RESIZABLE_IMAGE = "text-format-toolbar",
+  RESIZABLE_IMAGE = "resizable-image",
   IN_LINE_COMMENT = "in-line-comment",
   WHITE_BOARD = "white-board",
 }

@@ -1,16 +1,13 @@
 "use client";
-
-import { type EditorThemeClasses } from "lexical";
-
 import { LexicalComposer } from "@lexical/react/LexicalComposer";
 import { ContentEditable } from "@lexical/react/LexicalContentEditable";
 import LexicalErrorBoundary from "@lexical/react/LexicalErrorBoundary";
 import { HistoryPlugin } from "@lexical/react/LexicalHistoryPlugin";
 import { OnChangePlugin } from "@lexical/react/LexicalOnChangePlugin";
 import { RichTextPlugin } from "@lexical/react/LexicalRichTextPlugin";
+import { type EditorThemeClasses } from "lexical";
 import DefaultContentPlugin from "../WithDefaultContent/DefaultContentPlugin";
 import TreeViewPlugin from "../WithTreeViewPlugin/TreeViewPlugin";
-import TextFormatToolbarPlugin from "./TextFormatToolbarPlugin";
 
 // * UPDATED
 const theme: EditorThemeClasses = {
@@ -33,7 +30,7 @@ const Editor = () => {
 
   return (
     <LexicalComposer initialConfig={initialConfig}>
-      <TextFormatToolbarPlugin className="mb-2" />
+      {/* <TextFormatToolbarPlugin className="mb-2" /> */}
       <div className="editor-wrapper relative">
         <RichTextPlugin
           contentEditable={

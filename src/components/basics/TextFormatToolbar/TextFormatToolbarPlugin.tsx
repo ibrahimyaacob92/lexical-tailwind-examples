@@ -1,5 +1,3 @@
-"use client";
-
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext";
 import clsx from "clsx";
 import {
