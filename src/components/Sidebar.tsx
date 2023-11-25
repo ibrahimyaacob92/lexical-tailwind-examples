@@ -2,7 +2,7 @@
 
 import clsx from "clsx";
 import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 import {
   advancedPageList,
   basicPageList,
@@ -10,10 +10,8 @@ import {
 } from "~/types/pageList";
 
 const Sidebar = () => {
-  const router = useRouter();
-  // const slug = router.
   const pathname = usePathname();
-  console.log({ pathname });
+  const slug = pathname?.split("/")?.[2];
 
   return (
     <div className="order-r sticky top-0 flex h-screen w-[250px] flex-shrink-0 flex-col ">
@@ -30,8 +28,8 @@ const Sidebar = () => {
             <Link key={`basics-${page}`} href={`/basics/${page}`}>
               <p
                 className={clsx(
-                  "whitespace-nowrap"
-                  // page === slug ? "text-blue-800 underline" : "text-gray-700"
+                  "whitespace-nowrap",
+                  page === slug ? "text-blue-800 underline" : "text-gray-700"
                 )}
               >
                 {" "}

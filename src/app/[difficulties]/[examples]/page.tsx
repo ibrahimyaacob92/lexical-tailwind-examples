@@ -43,7 +43,6 @@ const Page = ({ params }: Props) => {
   const doc = componentMap[params.examples as BasicPage]?.doc ?? "";
   const preview = componentMap[params.examples as BasicPage]?.preview ?? "";
   const title = kebabToProperCase(params.examples);
-  console.log({ doc, preview });
   return (
     <div className=" grid h-full w-full grid-cols-2 gap-4 p-3">
       <div className="flex flex-col gap-2 border-r">
