@@ -11,9 +11,17 @@ import {
 } from "~/types/pageList";
 import { kebabToProperCase } from "~/utils/textFormatter";
 
+export const runtime = "edge";
+
 type Props = {
   params: { difficulties: string; examples: string };
 };
+
+export function generateMetadata({ params }: Props) {
+  return {
+    title: kebabToProperCase(params.examples),
+  };
+}
 
 const Page = ({ params }: Props) => {
   const difficulty = params.difficulties.toLocaleUpperCase() as Difficulties;
