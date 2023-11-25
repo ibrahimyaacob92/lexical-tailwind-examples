@@ -1,5 +1,7 @@
 import { redirect } from "next/navigation";
-import componentMap from "~/components/basics/ComponentMap";
+import AdvancedComponentMap from "~/components/advanced/AdvancedComponentMap";
+import BasicComponentMap from "~/components/basics/BasicComponentMap";
+import IntermediateComponentMap from "~/components/intermediate/IntermediateComponentMap";
 import {
   Difficulties,
   advancedPageList,
@@ -8,10 +10,11 @@ import {
   type AdvancedPage,
   type BasicPage,
   type IntermediatePage,
+  type PageContent,
 } from "~/types/pageList";
 import { kebabToProperCase } from "~/utils/textFormatter";
 
-// export const runtime = "edge";
+export const runtime = "edge";
 
 type Props = {
   params: { difficulties: string; examples: string };
@@ -22,6 +25,12 @@ export function generateMetadata({ params }: Props) {
     title: kebabToProperCase(params.examples),
   };
 }
+
+const componentMap: Record<string, PageContent> = {
+  ...BasicComponentMap,
+  ...AdvancedComponentMap,
+  ...IntermediateComponentMap,
+};
 
 const Page = ({ params }: Props) => {
   const difficulty = params.difficulties.toLocaleUpperCase() as Difficulties;
@@ -40,23 +49,15 @@ const Page = ({ params }: Props) => {
   }
 
   // import component map
-  const doc = componentMap[params.examples as BasicPage]?.doc ?? "";
-  const preview = componentMap[params.examples as BasicPage]?.preview ?? "";
+  const doc = componentMap[params.examples]?.doc ?? "";
+  const preview = componentMap[params.examples]?.preview ?? "";
   const title = kebabToProperCase(params.examples);
+
   return (
     <div className=" grid h-full w-full grid-cols-2 gap-4 p-3">
       <div className="flex flex-col gap-2 border-r">
         <h1 className="text-lg font-bold">{title}</h1>
-
         <div>{doc}</div>
-        {/* <button
-          onClick={() =>
-            (window.location.href =
-              "vscode://file/C:/work/lexical-tailwind-examples/src/components/MainLayout.tsx")
-          }
-        >
-          Code
-        </button> */}
       </div>
       <div className="">{preview}</div>
     </div>

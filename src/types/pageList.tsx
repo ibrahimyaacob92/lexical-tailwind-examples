@@ -1,3 +1,5 @@
+import { type ReactNode } from "react";
+
 export enum BasicPage {
   UNSTYLED_PLAIN = "plain-stupid-editor",
   STYLED_PLAIN = "styled-plain-editor",
@@ -53,3 +55,8 @@ export enum Difficulties {
 }
 
 export const difficultiesList = Object.values(Difficulties);
+
+export type PageContent = {
+  doc: ReactNode;
+  preview: ReactNode;
+};
