@@ -6,7 +6,7 @@ import { PlainTextPlugin } from "@lexical/react/LexicalPlainTextPlugin";
 import { ContentEditable } from "@lexical/react/LexicalContentEditable";
 import { HistoryPlugin } from "@lexical/react/LexicalHistoryPlugin";
 import { OnChangePlugin } from "@lexical/react/LexicalOnChangePlugin";
-import LexicalErrorBoundary from "@lexical/react/LexicalErrorBoundary";
+import LexicalErrorBoundaryWrapper from "~/components/LexicalErrorBoundaryWrapper";
 
 const PlainStupid = () => {
   const initialConfig = {
@@ -19,7 +19,7 @@ const PlainStupid = () => {
       <PlainTextPlugin
         contentEditable={<ContentEditable />}
         placeholder={<div>Enter some text...</div>}
-        ErrorBoundary={LexicalErrorBoundary}
+        ErrorBoundary={LexicalErrorBoundaryWrapper}
       />
     </LexicalComposer>
   );

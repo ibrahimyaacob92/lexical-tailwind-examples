@@ -3,7 +3,7 @@ import { useState } from "react";
 
 import { LexicalComposer } from "@lexical/react/LexicalComposer";
 import { ContentEditable } from "@lexical/react/LexicalContentEditable";
-import LexicalErrorBoundary from "@lexical/react/LexicalErrorBoundary";
+import LexicalErrorBoundaryWrapper from "~/components/LexicalErrorBoundaryWrapper";
 import { HistoryPlugin } from "@lexical/react/LexicalHistoryPlugin";
 import { OnChangePlugin } from "@lexical/react/LexicalOnChangePlugin";
 import { PlainTextPlugin } from "@lexical/react/LexicalPlainTextPlugin";
@@ -35,7 +35,7 @@ const StyledPlainEditor = () => {
               Enter some text...
             </div>
           }
-          ErrorBoundary={LexicalErrorBoundary}
+          ErrorBoundary={LexicalErrorBoundaryWrapper}
         />
       </div>
       <OnChangePlugin
