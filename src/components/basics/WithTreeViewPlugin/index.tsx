@@ -2,7 +2,7 @@ import { type EditorThemeClasses } from "lexical";
 
 import { LexicalComposer } from "@lexical/react/LexicalComposer";
 import { ContentEditable } from "@lexical/react/LexicalContentEditable";
-import LexicalErrorBoundary from "@lexical/react/LexicalErrorBoundary";
+import LexicalErrorBoundaryWrapper from "~/components/LexicalErrorBoundaryWrapper";
 import { HistoryPlugin } from "@lexical/react/LexicalHistoryPlugin";
 import { OnChangePlugin } from "@lexical/react/LexicalOnChangePlugin";
 import { RichTextPlugin } from "@lexical/react/LexicalRichTextPlugin";
@@ -33,7 +33,7 @@ const RichTextWithTreeViewPlugin = () => {
           placeholder={
             <div className="absolute left-2 top-2">Enter some text...</div>
           }
-          ErrorBoundary={LexicalErrorBoundary}
+          ErrorBoundary={LexicalErrorBoundaryWrapper}
         />
       </div>
       {/*  UI Plugin */}

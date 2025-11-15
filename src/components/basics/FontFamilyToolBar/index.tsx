@@ -1,10 +1,10 @@
 import { LexicalComposer } from "@lexical/react/LexicalComposer";
 import { ContentEditable } from "@lexical/react/LexicalContentEditable";
-import LexicalErrorBoundary from "@lexical/react/LexicalErrorBoundary";
 import { HistoryPlugin } from "@lexical/react/LexicalHistoryPlugin";
 import { OnChangePlugin } from "@lexical/react/LexicalOnChangePlugin";
 import { RichTextPlugin } from "@lexical/react/LexicalRichTextPlugin";
 import { type EditorThemeClasses } from "lexical";
+import LexicalErrorBoundaryWrapper from "~/components/LexicalErrorBoundaryWrapper";
 import DefaultContentPlugin from "../WithDefaultContent/DefaultContentPlugin";
 import TreeViewPlugin from "../WithTreeViewPlugin/TreeViewPlugin";
 import HeadersToolbarPlugin from "./FontFamilyToolbarPlugin";
@@ -38,7 +38,7 @@ const Editor = () => {
           placeholder={
             <div className="absolute left-2 top-2">Enter some text...</div>
           }
-          ErrorBoundary={LexicalErrorBoundary}
+          ErrorBoundary={LexicalErrorBoundaryWrapper}
         />
       </div>
       {/*  UI Plugin */}
